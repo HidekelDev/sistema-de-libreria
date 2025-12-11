@@ -1,5 +1,5 @@
 def test_db_schema_exists():
-    # Verifica operaciones básicas con modelos
+
     from app import create_app, db
     from app.models.book import Book
 
