@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Admin - Libros{% endblock %}
+{% block content %}
+<h2>Administración - Libros</h2>
+<a href="{{ url_for('admin.new_book') }}">Agregar nuevo libro</a>
+<ul>
+  {% for book in books %}
+    <li>{{ book.title }} — {{ book.author }} ({{ book.available_copies }}/{{ book.total_copies }})</li>
+  {% else %}
+    <li>No hay libros.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

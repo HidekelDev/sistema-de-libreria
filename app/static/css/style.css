@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+header { background: #004466; color: white; padding: 1em; }
+nav a { color: #fff; margin-right: 1em; }
+main { padding: 1em; }
+.flashes { list-style: none; padding: 0; }
+.flashes li { background: #ffd; border: 1px solid #ddd; padding: 0.5em; margin-bottom: 0.5em; }

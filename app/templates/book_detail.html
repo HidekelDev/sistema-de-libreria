@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{ book.title }}{% endblock %}
+{% block content %}
+<h2>{{ book.title }}</h2>
+<p>Autor: {{ book.author }}</p>
+<p>ISBN: {{ book.isbn }}</p>
+<p>Disponibles: {{ book.available_copies }}</p>
+{% if current_user.is_authenticated %}
+  {% if book.available_copies > 0 %}
+    <a href="{{ url_for('loans.borrow', book_id=book.id) }}">Solicitar préstamo</a>
+  {% else %}
+    <span>No disponible</span>
+  {% endif %}
+{% else %}
+  <a href="{{ url_for('auth.login') }}">Inicia sesión para pedir prestado</a>
+{% endif %}
+{% endblock %}
